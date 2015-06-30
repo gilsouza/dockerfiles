@@ -1,12 +1,16 @@
 FROM node
 
-RUN apt-get update -y && apt-get upgrade -y \
-#  && npm install -g forever \
-  && npm install -g pm2 \ 
-  && npm install -g grunt-cli \
-  && npm install -g bower \
-  && npm install -g browser-sync \
-  && npm install -g express-generator
+RUN apt-get update -y && \
+  npm install -g \
+  bower \
+  browser-sync \
+  express-generator
+  grunt-cli \
+  pm2 \
+
+RUN mkdir /home/dev/
+
+VOLUME ["/home/dev"] 
 
 EXPOSE 3000 3001
 CMD [ "bash" ]
