@@ -4,7 +4,7 @@
 # Run with display in ubuntu
 # docker run -ti --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY 
 
-FROM ubuntu
+FROM debian
 MAINTAINER Gilmar Souza "gilmarcs@gmail.com"
 
 RUN apt-get update -y && apt-get install --no-install-recommends -y -q \
